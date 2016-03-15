@@ -524,6 +524,10 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 
 
+
+
+
+
   //If you have enabled the Bed Auto Leveling and are using the same Z Probe for Z Homing,
   //it is highly recommended you let this Z_SAFE_HOMING enabled!!!
 
@@ -598,12 +602,16 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
  * MOVEMENT SETTINGS
  */
 
-#define HOMING_FEEDRATE {50*60, 50*60, 100, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 50*60, 50, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,93}  // default steps per unit for Ultimaker
-#define DEFAULT_MAX_FEEDRATE          {250, 250, 5, 25}    // (mm/sec)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,93}  // default steps per unit for Ultimaker
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,770}  // Wade Geared Bowden
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,152}  // MK8 gear for bowden
+
+//#define DEFAULT_MAX_FEEDRATE          {250, 250, 2, 25}    // (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {250, 250, 3, 50}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000,1000,5,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration in mm/s^2 for printing moves
@@ -757,6 +765,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // Note: The PANELOLU2 encoder click input can either be directly connected to a pin
 //       (if BTN_ENC defined to != -1) or read through I2C (when BTN_ENC == -1).
 //#define LCD_I2C_PANELOLU2
+
+
 
 
 
